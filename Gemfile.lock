@@ -1,6 +1,23 @@
+GIT
+  remote: git://github.com/intridea/omniauth-github.git
+  revision: 2430e20843daa0acb681994d2f15fac0dbd44631
+  specs:
+    omniauth-github (1.0.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+
+GIT
+  remote: git://github.com/intridea/omniauth-openid.git
+  revision: e9965493e2d8a2fc138ccae39c8bcf49311e496f
+  specs:
+    omniauth-openid (1.0.1)
+      omniauth (~> 1.0)
+      rack-openid (~> 1.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    Selenium (1.1.14)
     actionmailer (3.2.7)
       actionpack (= 3.2.7)
       mail (~> 2.4.4)
@@ -28,9 +45,21 @@ GEM
     activesupport (3.2.7)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.2)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (2.0.4.0)
     builder (3.0.0)
+    capybara (1.1.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    childprocess (0.3.5)
+      ffi (~> 1.0, >= 1.0.6)
+    coderay (1.0.7)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -38,33 +67,100 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    commonwatir (3.0.0)
+    cucumber (1.2.1)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.11.0)
+      json (>= 1.4.6)
+    cucumber-rails (1.3.0)
+      capybara (>= 1.1.2)
+      cucumber (>= 1.1.8)
+      nokogiri (>= 1.5.0)
+    database_cleaner (0.8.0)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
+    diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    haml (3.1.6)
+    factory_girl (4.0.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.0.0)
+      factory_girl (~> 4.0.0)
+      railties (>= 3.0.0)
+    faraday (0.8.4)
+      multipart-post (~> 1.1)
+    ffi (1.1.5)
+    firewatir (1.9.4)
+      commonwatir (>= 1.9.2)
+    gherkin (2.11.2)
+      json (>= 1.4.6)
+    haml (3.1.7)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
+    hashie (1.2.0)
     hike (1.2.1)
+    hoe (3.0.8)
+      rake (~> 0.8)
+    hpricot (0.8.6)
+    httpauth (0.1)
     i18n (0.6.0)
     journey (1.0.4)
-    jquery-rails (2.0.2)
-      railties (>= 3.2.0, < 5.0)
+    jquery-rails (2.1.1)
+      railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
-    json (1.7.4)
+    jquery-ui-rails (2.0.0)
+      jquery-rails
+      railties (>= 3.1.0)
+    json (1.7.5)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
     libv8 (3.3.10.4)
+    libwebsocket (0.1.5)
+      addressable
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8)
     mime-types (1.19)
+    mocha (0.9.12)
     multi_json (1.3.6)
+    multipart-post (1.1.5)
+    nokogiri (1.5.5)
+    oauth2 (0.8.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.1)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth2 (1.1.0)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.4.0)
     polyglot (0.3.3)
+    pry (0.9.10)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.3.1)
+    pry-nav (0.2.2)
+      pry (~> 0.9.10)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-openid (1.3.1)
+      rack (>= 1.1.0)
+      ruby-openid (>= 2.1.8)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -87,19 +183,57 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    sass (3.2.0)
+    rspec (2.11.0)
+      rspec-core (~> 2.11.0)
+      rspec-expectations (~> 2.11.0)
+      rspec-mocks (~> 2.11.0)
+    rspec-core (2.11.1)
+    rspec-expectations (2.11.2)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.11.2)
+    rspec-rails (2.11.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec (~> 2.11.0)
+    rubigen (1.5.7)
+      activesupport (>= 2.3.5)
+      i18n
+    ruby-openid (2.2.0)
+    ruby_parser (2.3.1)
+      sexp_processor (~> 3.0)
+    rubyzip (0.9.9)
+    s4t-utils (1.0.4)
+      hoe (>= 1.3.0)
+    sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    selenium-webdriver (2.25.0)
+      childprocess (>= 0.2.5)
+      libwebsocket (~> 0.1.3)
+      multi_json (~> 1.0)
+      rubyzip
+    sexp_processor (3.2.0)
+    slop (3.3.2)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
+    taza (0.9.1.2)
+      Selenium (~> 1.1.14)
+      firewatir (~> 1.9.4)
+      mocha (~> 0.9.3)
+      rake (~> 0.9.2)
+      rspec (~> 2.6)
+      rubigen (~> 1.5.6)
+      user-choices (~> 1.1.6.1)
+      watir-webdriver (~> 0.4)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
-    thor (0.15.4)
+    thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
@@ -108,7 +242,18 @@ GEM
     uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    user-choices (1.1.6.1)
+      builder (>= 2.1.2)
+      s4t-utils (>= 1.0.3)
+      xml-simple (>= 1.0.11)
+    warden (1.2.1)
+      rack (>= 1.0)
+    watir-webdriver (0.6.1)
+      selenium-webdriver (>= 2.18.0)
     will_paginate (3.0.3)
+    xml-simple (1.1.1)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -116,12 +261,29 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (>= 2.0.4.0)
   coffee-rails (~> 3.2.1)
+  cucumber-rails
+  database_cleaner
+  devise
+  factory_girl_rails
   haml (>= 3.1.6)
   haml-rails (>= 0.3.4)
+  hpricot
   jquery-rails
+  jquery-ui-rails
+  omniauth
+  omniauth-github!
+  omniauth-openid!
+  pry
+  pry-nav
   rails (= 3.2.7)
+  rspec
+  rspec-rails
+  ruby_parser
+  sass
   sass-rails (~> 3.2.3)
   sqlite3
+  taza
   therubyracer
   uglifier (>= 1.0.3)
+  watir-webdriver
   will_paginate (>= 3.0.3)
