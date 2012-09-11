@@ -1,3 +1,8 @@
 class Exercise < ActiveRecord::Base
-  attr_accessible :main_exercise, :name
+
+	has_many :targets
+	has_many :goals, through: :targets
+
+	attr_accessible :name, :main
+
 end

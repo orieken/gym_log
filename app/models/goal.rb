@@ -1,5 +1,9 @@
 class Goal < ActiveRecord::Base
-  attr_accessible :project_id, :user_id
-  belongs_to :project
+
+	belongs_to :project
+	has_many :targets
+	has_many :excercises, through: :targets
+
+	attr_accessible :weight, :units
 
 end

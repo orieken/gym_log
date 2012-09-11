@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.7'
-gem 'sqlite3'
+gem 'mysql2'
 gem 'omniauth'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'

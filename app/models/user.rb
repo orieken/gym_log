@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :username
 
+	has_many :projects
 
   def apply_omniauth(omniauth)
     case omniauth['provider']
